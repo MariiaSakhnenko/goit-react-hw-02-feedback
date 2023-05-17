@@ -1,16 +1,20 @@
 import PropTypes from 'prop-types';
+import { BoxTitle, Title } from './Section.styled';
 
 
-export const Section = ({ title, children }) => {
-  return (
-    <section>
-      {title && <h2>{title}</h2>}
-      {children}
-    </section>
-  );
+ const Section =({title, children}) =>{
+    return (
+        <BoxTitle>
+            {title && <Title>{title}</Title>}
+            {children}
+        </BoxTitle>
+        
+    )
 };
 
 Section.propTypes = {
-  title: PropTypes.string,
-  children: PropTypes.node,
-};
+    title: PropTypes.string.isRequired,
+    children: PropTypes.element.isRequired,
+}
+
+export default Section;
